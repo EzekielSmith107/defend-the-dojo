@@ -1,0 +1,24 @@
+Coding To-Do List:
+
+Map Creation:
+- Game assets and downloads <>
+- Create a path <>
+- Map details <>
+
+Tower Defense Basics:
+- Project Setup <>
+- Pathfinding <>
+- Building Placement
+- Shooting Projectiles
+- Health Bars
+- Sprites
+- Waves
+- Game over
+- Resources
+- Launch
+
+Start Screen w/ Controls:
+
+    Leaderboard connected to database:
+    Name input on start screen and log points per enemy defeated?
+    Include leaderboard on start screen?

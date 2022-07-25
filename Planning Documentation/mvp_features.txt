@@ -1,0 +1,9 @@
+MVP Features:
+
+1) App allows users to begin the game from start screen
+
+2) App allows users to place "towers" on map tiles that fire at enemies
+
+3) App allows users to reach "Game Over"
+
+Name of Project: "Defend the Dojo"
