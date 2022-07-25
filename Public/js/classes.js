@@ -1,19 +1,31 @@
-const canvas = document.querySelector('canvas')
-const context = canvas.getContext('2d')
+// Creating a class to make placement tiles
+class PlacementTile {
+    constructor({ position = { x: 0, y: 0 } }) {
+        this.position = position
+        this.size = 16
+        this.color = 'rgba(255, 255, 255, 0.2)'
+    }
 
-canvas.width = 1280
-canvas.height = 768
+    draw() {
+        context.fillStyle = this.color
+        context.fillRect(this.position.x, this.position.y, this.size, this.size)
+    }
 
-// Fill and position canvas in browser
-context.fillStyle = 'white'
-context.fillRect(0, 0, canvas.width, canvas.height)
+    update(mouse) {
+        this.draw()
 
-// Connect map to browser
-const image = new Image()
-image.onload = () => {
-    animate()
+        // Mouse is colliding if within bounds of tile size
+        if(mouse.x > this.position.x && 
+            mouse.x < this.position.x + this.size &&
+            mouse.y > this.position.y &&
+            mouse.y < this.position.y + this.size
+            ) {
+                this.color = 'white'
+        } else {
+            this.color = 'rgba(255, 255, 255, 0.2)'
+        }
+    }
 }
-image.src = '../img/map.png'
 
 // Creating enemy class so we can more easily add enemies without bloated code
 class Enemy {
@@ -64,24 +76,4 @@ class Enemy {
             this.waypointIndex++
         }
     }
-}
-
-// Creating new enemies from our class
-const enemySpawn = []
-for(let i = 1; i < 10; i++) {
-    const xOffset = i * 150
-    enemySpawn.push(
-        new Enemy({
-            position: { x: waypoints[0].x - xOffset, y: waypoints[0].y }
-    }))
-}
-
-// Creating our enemy animation and linking everything together
-function animate() {
-    requestAnimationFrame(animate)
-
-    context.drawImage(image, 0, 0)
-    enemySpawn.forEach(enemy => {
-        enemy.update()
-    }) 
 }
