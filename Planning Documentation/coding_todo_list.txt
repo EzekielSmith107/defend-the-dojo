@@ -8,7 +8,7 @@ Map Creation:
 Tower Defense Basics:
 - Project Setup <>
 - Pathfinding <>
-- Building Placement
+- Building Placement <>
 - Shooting Projectiles
 - Health Bars
 - Sprites

@@ -51,6 +51,11 @@ for(let i = 1; i < 10; i++) {
     }))
 }
 
+const buildings = []
+//
+let activeTile = undefined
+
+
 // Creating our animation and linking everything together
 function animate() {
     requestAnimationFrame(animate)
@@ -63,6 +68,10 @@ function animate() {
     placementTiles.forEach((tile) => {
         tile.update(mouse)
     })
+
+    buildings.forEach(building => {
+        building.draw()
+    })
 }
 
 // Add event listener to detect mouse collision with placement tiles
@@ -71,7 +80,35 @@ const mouse = {
     y: undefined
 }
 
+// Place a building at an active tile position with a click if it is not occupied
+canvas.addEventListener('click', () => {
+    if(activeTile && !activeTile.occupied) {
+        buildings.push(new Building({
+            position: {
+                x: activeTile.position.x,
+                y: activeTile.position.y
+            }
+        }))
+        activeTile.occupied = true
+    }
+})
+
 window.addEventListener('mousemove', (event) => {
     mouse.x = event.clientX
     mouse.y = event.clientY
+
+    // Setting active tile position using our mouse placement
+    activeTile = null
+    for(let i = 0; i < placementTiles.length; i++) {
+        const tile = placementTiles[i]
+        if(
+            mouse.x > tile.position.x && 
+            mouse.x < tile.position.x + tile.size &&
+            mouse.y > tile.position.y &&
+            mouse.y < tile.position.y + tile.size
+            ) {
+                activeTile = tile
+                break
+            }
+    }
 })

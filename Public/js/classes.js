@@ -4,6 +4,7 @@ class PlacementTile {
         this.position = position
         this.size = 16
         this.color = 'rgba(255, 255, 255, 0.2)'
+        this.occupied = false
     }
 
     draw() {
@@ -15,7 +16,8 @@ class PlacementTile {
         this.draw()
 
         // Mouse is colliding if within bounds of tile size
-        if(mouse.x > this.position.x && 
+        if(
+            mouse.x > this.position.x && 
             mouse.x < this.position.x + this.size &&
             mouse.y > this.position.y &&
             mouse.y < this.position.y + this.size
@@ -29,7 +31,7 @@ class PlacementTile {
 
 // Creating enemy class so we can more easily add enemies without bloated code
 class Enemy {
-    constructor({position = { x: 0, y: 0}}) {
+    constructor({ position = { x: 0, y: 0 } }) {
         this.position = position
         this.width = 50
         this.height = 50
@@ -75,5 +77,19 @@ class Enemy {
         ) {
             this.waypointIndex++
         }
+    }
+}
+
+//? Add inheritance from placement tiles?
+class Building {
+    constructor({ position = { x: 0, y: 0 } }) {
+        this.position = position
+        // This should be in reference to our sprite size
+        // this.width = 16
+    }
+
+    draw() {
+        context.fillStyle = 'blue'
+        context.fillRect(this.position.x, this.position.y, 16, 16)
     }
 }
