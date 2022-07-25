@@ -80,12 +80,39 @@ class Enemy {
     }
 }
 
+class Projectile {
+    constructor({ position = { x: 0, y: 0 } }) {
+        this.position = position
+        // property for a moving object
+        this.velocity = {
+            x: 0,
+            y: 0
+        }
+    }
+
+    draw() {
+        context.beginPath()
+        // Drawing the projectile in the shape of a circle using radians
+        context.arc(this.position.x, this.position.y, 5, 0, Math.PI * 2)
+        context.fillStyle = 'orange'
+        context.fill()
+    }
+}
+
 //? Add inheritance from placement tiles?
 class Building {
     constructor({ position = { x: 0, y: 0 } }) {
         this.position = position
         // This should be in reference to our sprite size
         // this.width = 16
+        this.projectiles = [
+            new Projectile({
+                position: {
+                    x: this.position.x,
+                    y: this.position.y
+                }
+            })
+        ]
     }
 
     draw() {

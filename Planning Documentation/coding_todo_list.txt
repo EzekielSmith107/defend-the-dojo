@@ -18,7 +18,10 @@ Tower Defense Basics:
 - Launch
 
 Start Screen w/ Controls:
-
+- Landing page for website
+- Includes lore
+- Includes controls
+- Includes Start button
     Leaderboard connected to database:
     Name input on start screen and log points per enemy defeated?
     Include leaderboard on start screen?
