@@ -110,8 +110,8 @@ class Projectile {
         this.draw()
         // Using sin and cosine to determine projectile velocity
         const angle = Math.atan2(
-            enemySpawn[0].center.y - this.position.y, 
-            enemySpawn[0].center.x - this.position.x
+            this.enemy.center.y - this.position.y, 
+            this.enemy.center.x - this.position.x
         )
         
         // Using power to speed up our projectiles
@@ -135,17 +135,11 @@ class Building {
             x: this.position.x + this.width / 2,
             y: this.position.y + this.height / 2
         }
-        this.projectiles = [
-            new Projectile({
-                position: {
-                    x: this.center.x,
-                    y: this.center.y
-                },
-                enemy: enemySpawn[0]
-            })
-        ]
+        this.projectiles = []
         // Setting building radius to target enemies
-        this.radius = 150
+        this.radius = 100
+        this.target
+        this.frames = 0
     }
 
     draw() {
@@ -156,5 +150,22 @@ class Building {
         context.arc(this.center.x, this.center.y, this.radius, 0, Math.PI * 2)
         context.fillStyle = 'rgba(0, 0, 255, 0.2)'
         context.fill()
+    }
+
+    update() {
+        this.draw()
+        // Controls how fast the building shoots
+        if(this.frames % 100 === 0 && this.target) {
+            this.projectiles.push(
+                new Projectile({
+                    position: {
+                        x: this.center.x,
+                        y: this.center.y
+                    },
+                    enemy: this.target
+                })
+            )
+        }
+        this.frames++
     }
 }
