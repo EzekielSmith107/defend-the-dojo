@@ -6,10 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Defend the Dojo</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Changa+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <canvas></canvas>
-
+    <div id="canvasParent">
+        <canvas></canvas>
+        <div id="gameOver">GAME OVER</div>
+    </div>
+    
     <script src="./js/placementTilesData.js"></script>
     <script src="./js/waypoints.js"></script>
     <script src="./js/classes.js"></script>

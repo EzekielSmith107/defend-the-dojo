@@ -9,12 +9,12 @@ Tower Defense Basics:
 - Project Setup <>
 - Pathfinding <>
 - Building Placement <>
-- Shooting Projectiles
-- Health Bars
-- Sprites
-- Waves
-- Game over
+- Shooting Projectiles <>
+- Health Bars <>
+- Waves <>
+- Game over <>
 - Resources
+- Sprites
 - Launch
 
 Start Screen w/ Controls:

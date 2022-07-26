@@ -1,3 +1,27 @@
 body {
     background-color: black;
+    font-family: 'Changa One', cursive;
+}
+
+#gameOver {
+    display: none;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 72px;
+    color: white;
+    text-shadow:
+		-2px -2px 0 #000,
+		2px -2px 0 #000,
+		-2px 2px 0 #000,
+		2px 2px 0 #000;
+}
+
+#canvasParent {
+    display: inline-block;
+    position: relative;
 }
