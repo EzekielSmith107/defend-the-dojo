@@ -23,5 +23,5 @@ Start Screen w/ Controls:
 - Includes controls
 - Includes Start button
     Leaderboard connected to database:
-    Name input on start screen and log points per enemy defeated?
+    Name input on start screen and log points per enemy defeated? Can be initials to prevent unwanted words.
     Include leaderboard on start screen?

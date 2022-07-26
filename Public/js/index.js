@@ -32,8 +32,6 @@ placementTilesData2D.forEach((row, y) => {
     })
 })
 
-console.log(placementTiles)
-
 // Connect map to browser
 const image = new Image()
 image.onload = () => {
@@ -72,9 +70,19 @@ function animate() {
     buildings.forEach(building => {
         building.draw()
 
-        building.projectiles.forEach((projectile) => {
-            projectile.draw()
-        })
+        for(let i = building.projectiles.length - 1; i >= 0; i--) {
+            const projectile = building.projectiles[i]
+        
+            projectile.update()
+
+            const xDistance = projectile.enemy.center.x - projectile.position.x
+            const yDistance = projectile.enemy.center.y - projectile.position.y
+            const distance = Math.hypot(xDistance, yDistance)
+            // When using splice, use a traditional for loop from the back to prevent flicker when using a forEach function
+            if(distance < projectile.enemy.radius + projectile.radius) {
+                building.projectiles.splice(i, 1)
+            }
+        }
     })
 }
 

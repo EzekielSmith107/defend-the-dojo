@@ -42,11 +42,17 @@ class Enemy {
             x: this.position.x + this.width / 2,
             y: this.position.y + this.height / 2
         }
+        this.radius = 25
     }
 
     draw() {
         context.fillStyle = 'red'
-        context.fillRect(this.position.x, this.position.y, this.width, this.height)
+        // Line below creates rectangular enemies
+        // context.fillRect(this.position.x, this.position.y, this.width, this.height) 
+        // Create a circular enemy
+        context.beginPath()
+        context.arc(this.center.x, this.center.y, this.radius, 0, Math.PI * 2)
+        context.fill()
     }
 
     update() {
@@ -81,21 +87,40 @@ class Enemy {
 }
 
 class Projectile {
-    constructor({ position = { x: 0, y: 0 } }) {
+    constructor({ position = { x: 0, y: 0 }, enemy }) {
         this.position = position
         // property for a moving object
         this.velocity = {
             x: 0,
             y: 0
         }
+        this.enemy = enemy
+        this.radius = 5
     }
 
     draw() {
         context.beginPath()
         // Drawing the projectile in the shape of a circle using radians
-        context.arc(this.position.x, this.position.y, 5, 0, Math.PI * 2)
+        context.arc(this.position.x, this.position.y, this.radius, 0, Math.PI * 2)
         context.fillStyle = 'orange'
         context.fill()
+    }
+
+    update() {
+        this.draw()
+        // Using sin and cosine to determine projectile velocity
+        const angle = Math.atan2(
+            enemySpawn[0].center.y - this.position.y, 
+            enemySpawn[0].center.x - this.position.x
+        )
+        
+        // Using power to speed up our projectiles
+        const power = 3
+        this.velocity.x = Math.cos(angle) * power
+        this.velocity.y = Math.sin(angle) * power
+
+        this.position.x += this.velocity.x
+        this.position.y += this.velocity.y
     }
 }
 
@@ -104,19 +129,32 @@ class Building {
     constructor({ position = { x: 0, y: 0 } }) {
         this.position = position
         // This should be in reference to our sprite size
-        // this.width = 16
+        this.width = 16
+        this.height = 16
+        this.center = {
+            x: this.position.x + this.width / 2,
+            y: this.position.y + this.height / 2
+        }
         this.projectiles = [
             new Projectile({
                 position: {
-                    x: this.position.x,
-                    y: this.position.y
-                }
+                    x: this.center.x,
+                    y: this.center.y
+                },
+                enemy: enemySpawn[0]
             })
         ]
+        // Setting building radius to target enemies
+        this.radius = 150
     }
 
     draw() {
         context.fillStyle = 'blue'
-        context.fillRect(this.position.x, this.position.y, 16, 16)
+        context.fillRect(this.position.x, this.position.y, this.width, this.height)
+
+        context.beginPath
+        context.arc(this.center.x, this.center.y, this.radius, 0, Math.PI * 2)
+        context.fillStyle = 'rgba(0, 0, 255, 0.2)'
+        context.fill()
     }
 }
