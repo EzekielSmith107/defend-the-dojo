@@ -146,10 +146,11 @@ class Building {
         context.fillStyle = 'blue'
         context.fillRect(this.position.x, this.position.y, this.width, this.height)
 
-        context.beginPath
-        context.arc(this.center.x, this.center.y, this.radius, 0, Math.PI * 2)
-        context.fillStyle = 'rgba(0, 0, 255, 0.2)'
-        context.fill()
+        //! This circle radius is bugged on the last enemy when given a visual. Has no effect on gameplay.
+        // context.beginPath
+        // context.arc(this.center.x, this.center.y, this.radius, 0, Math.PI * 2)
+        // context.fillStyle = 'rgba(0, 0, 255, 0.2)'
+        // context.fill()
     }
 
     update() {
