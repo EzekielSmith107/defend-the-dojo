@@ -25,3 +25,27 @@ body {
     display: inline-block;
     position: relative;
 }
+
+#resourceContainer {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 4px;
+    right: 8px;
+}
+
+#heartPic {
+    width: 35px;
+    color: red;
+    margin-right: 5px;
+}
+
+#heartsRemaining {
+    font-size: 36px;
+    color: white;
+    text-shadow:
+		-2px -2px 0 #000,
+		2px -2px 0 #000,
+		-2px 2px 0 #000,
+		2px 2px 0 #000;
+}

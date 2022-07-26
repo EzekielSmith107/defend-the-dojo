@@ -72,6 +72,7 @@ function animate() {
         if(enemy.position.x > canvas.width) {
             hearts -= 1
             enemySpawn.splice(i, 1)
+            document.querySelector('#heartsRemaining').innerHTML = hearts
 
             if(hearts === 0) {
                 // Pause the game when hearts reach 0. Works on a window object
