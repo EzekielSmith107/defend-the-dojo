@@ -1,7 +1,8 @@
 require('dotenv').config()
 const Sequelize = require("sequelize")
 
-const{CONNECTION_STRING} = process.env
+// Still needed if hosting
+const{ CONNECTION_STRING } = process.env
 
 const sequelize = new Sequelize(CONNECTION_STRING, {
     dialect: 'postgres',
@@ -11,3 +12,27 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
         }
     }
 })
+
+module.exports = {
+    seed: (req, res) => {
+        sequelize.query(`
+            DROP TABLE IF EXISTS leaderboard;
+
+            CREATE TABLE leaderboard (
+                leaderboard_id SERIAL PRIMARY KEY,
+                initials VARCHAR(3),
+                score INTEGER
+            );
+
+            INSERT INTO leaderboard (initials, score)
+            VALUES ('ABC', 100),
+            ('DEF', 80),
+            ('GHI', 60),
+            ('JKL', 40),
+            ('MNO', 20);
+        `).then(() => {
+            console.log('DB seeded!')
+            res.sendStatus(200)
+        }).catch(err => console.log('error seeding DB', err))
+    }
+}

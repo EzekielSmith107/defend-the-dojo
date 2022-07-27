@@ -1,4 +1,7 @@
 {
+  "name": "foundations-capstone-project",
+  "version": "1.0.0",
+  "main": "index.js",
   "dependencies": {
     "axios": "^0.27.2",
     "cors": "^2.8.5",
@@ -8,5 +11,21 @@
     "pg": "^8.7.3",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.21.3"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EzekielSmith107/foundations-capstone-f25.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EzekielSmith107/foundations-capstone-f25/issues"
+  },
+  "homepage": "https://github.com/EzekielSmith107/foundations-capstone-f25#readme",
+  "description": ""
 }
