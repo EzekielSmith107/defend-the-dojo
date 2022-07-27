@@ -15,13 +15,21 @@ Tower Defense Basics:
 - Game over <>
 - Resources <>
 - Sprites <>
-- Launch
+
+Backend and Frontend Tie: 
+- basic setup
+- get and post setup with endpoints and controller file
+- front end request
+- front end start screen vv
 
 Start Screen w/ Controls:
 - Landing page for website
+- 5 semantic tags in html
 - Includes lore
 - Includes controls
 - Includes Start button
     Leaderboard connected to database:
-    Name input on start screen and log points per enemy defeated? Can be initials to prevent unwanted words.
+    Name input on start screen and log points per enemy defeated? Can be initials (three letters) to prevent unwanted words.
     Include leaderboard on start screen?
+
+Launch:
