@@ -58,6 +58,7 @@ let activeTile = undefined
 let enemyCount = 3
 let hearts = 10
 let coins = 100
+const explosions = []
 spawnEnemies(enemyCount)
 
 // Creating our animation and linking everything together
@@ -80,6 +81,16 @@ function animate() {
                 cancelAnimationFrame(animationId)
                 document.querySelector('#gameOver').style.display = 'flex'
             }
+        }
+    }
+
+    for(let i = explosions.length - 1; i >= 0; i--) {
+        const explosion = explosions[i]
+        explosion.draw()
+        explosion.update()
+
+        if(explosion.frames.current >= explosion.frames.max - 1) {
+            explosions.splice(i, 1)
         }
     }
 
@@ -130,6 +141,12 @@ function animate() {
                         document.querySelector('#coinsRemaining').innerHTML = coins
                     }
                 }
+                // Creating explosion fx on projectile to enemy contact
+                explosions.push(new Sprite({ 
+                    position: { x: projectile.enemy.center.x, y: projectile.enemy.center.y }, 
+                    imageSrc: '../img/slash.png', 
+                    frames : { max: 4, hold: 10 } 
+                }))
                 building.projectiles.splice(i, 1)
             }
         }

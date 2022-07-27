@@ -1,7 +1,11 @@
 // Creating enemy class so we can more easily add enemies without bloated code
 class Enemy extends Sprite {
     constructor({ position = { x: 0, y: 0 } }) {
-        super({ position, imageSrc: '../img/enemy.png', frames: { max: 5, hold: 7 } })
+        super({ 
+            position, 
+            imageSrc: '../img/enemy.png', 
+            frames: { max: 5, hold: 7 } 
+        })
         this.width = 50
         this.height = 50
         this.waypointIndex = 0

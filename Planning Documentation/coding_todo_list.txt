@@ -14,7 +14,7 @@ Tower Defense Basics:
 - Waves <>
 - Game over <>
 - Resources <>
-- Sprites
+- Sprites <>
 - Launch
 
 Start Screen w/ Controls:

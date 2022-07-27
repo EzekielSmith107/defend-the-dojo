@@ -6,7 +6,7 @@ class Building extends Sprite {
             imageSrc: '../img/ninja.png',
             frames: {
                 max: 4,
-                hold: 10
+                hold: 15
             }
         })
         // This should be in reference to our sprite size

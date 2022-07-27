@@ -42,11 +42,12 @@ class Sprite {
     }
 
     update() {
+        // update and draw separate based on sprite needs
         // Adding frame hold in animation
         this.frames.elapsed++
         if(this.frames.elapsed % this.frames.hold === 0) {
             this.frames.current++
-            if(this.frames.current >= this.frames.max - 1) {
+            if(this.frames.current >= this.frames.max) {
                 this.frames.current = 0
             }
         }
