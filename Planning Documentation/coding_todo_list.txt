@@ -13,7 +13,7 @@ Tower Defense Basics:
 - Health Bars <>
 - Waves <>
 - Game over <>
-- Resources
+- Resources <>
 - Sprites
 - Launch
 

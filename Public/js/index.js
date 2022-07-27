@@ -53,10 +53,11 @@ function spawnEnemies(spawnCount) {
 }
 
 const buildings = []
-//
+
 let activeTile = undefined
 let enemyCount = 3
 let hearts = 10
+let coins = 100
 spawnEnemies(enemyCount)
 
 // Creating our animation and linking everything together
@@ -84,7 +85,7 @@ function animate() {
 
     // tracking total amount of enemies
     if(enemySpawn.length === 0) {
-        enemyCount += 3
+        enemyCount += 5
         spawnEnemies(enemyCount)
     }
 
@@ -125,6 +126,8 @@ function animate() {
                     // Added if statement to prevent enemyIndex from being -1 if it doesn't return true. aka enemy died while projectile mid flight
                     if(enemyIndex > -1) {
                         enemySpawn.splice(enemyIndex, 1)
+                        coins += 25
+                        document.querySelector('#coinsRemaining').innerHTML = coins
                     }
                 }
                 building.projectiles.splice(i, 1)
@@ -141,7 +144,9 @@ const mouse = {
 
 // Place a building at an active tile position with a click if it is not occupied
 canvas.addEventListener('click', () => {
-    if(activeTile && !activeTile.occupied) {
+    if(activeTile && !activeTile.occupied && coins - 50 >= 0) {
+        coins -= 50
+        document.querySelector('#coinsRemaining').innerHTML = coins
         buildings.push(new Building({
             position: {
                 x: activeTile.position.x,
