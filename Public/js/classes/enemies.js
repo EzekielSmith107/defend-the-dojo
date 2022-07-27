@@ -1,7 +1,7 @@
 // Creating enemy class so we can more easily add enemies without bloated code
-class Enemy {
+class Enemy extends Sprite {
     constructor({ position = { x: 0, y: 0 } }) {
-        this.position = position
+        super({ position, imageSrc: '../img/enemy.png', frames: { max: 5 } })
         this.width = 50
         this.height = 50
         this.waypointIndex = 0
@@ -20,13 +20,7 @@ class Enemy {
     }
 
     draw() {
-        context.fillStyle = 'red'
-        // Line below creates rectangular enemies
-        // context.fillRect(this.position.x, this.position.y, this.width, this.height) 
-        // Create a circular enemy
-        context.beginPath()
-        context.arc(this.center.x, this.center.y, this.radius, 0, Math.PI * 2)
-        context.fill()
+        super.draw()
 
         // Health bar
         context.fillStyle = 'red'
