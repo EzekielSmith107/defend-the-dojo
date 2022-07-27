@@ -1,7 +1,7 @@
 // Creating enemy class so we can more easily add enemies without bloated code
 class Enemy extends Sprite {
     constructor({ position = { x: 0, y: 0 } }) {
-        super({ position, imageSrc: '../img/enemy.png', frames: { max: 5 } })
+        super({ position, imageSrc: '../img/enemy.png', frames: { max: 5, hold: 7 } })
         this.width = 50
         this.height = 50
         this.waypointIndex = 0
@@ -32,7 +32,7 @@ class Enemy extends Sprite {
 
     update() {
         this.draw()
-        
+        super.update()
         // Moving x and y position using waypoint data
         // Finding x and y velocities : Use .center for finding angles using the center of our enemies
         const waypoint = waypoints[this.waypointIndex]

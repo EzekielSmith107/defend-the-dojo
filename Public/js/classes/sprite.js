@@ -1,6 +1,6 @@
 // Extending from sprite to clean up code
 class Sprite {
-    constructor({ position = { x: 0, y: 0 }, imageSrc, frames = { max: 1 } }) {
+    constructor({ position = { x: 0, y: 0 }, imageSrc, frames = { max: 1, hold: 0 }, offset = { x: 0, y: 0 },  }) {
         this.position = position
         // Connecting sprite to projectile
         this.image = new Image()
@@ -10,8 +10,9 @@ class Sprite {
             max: frames.max,
             current: 0,
             elapsed: 0,
-            hold: 7
+            hold: frames.hold
         }
+        this.offset = offset
     }
 
     draw() {
@@ -32,12 +33,15 @@ class Sprite {
             crop.position.y, 
             crop.width, 
             crop.height,
-            this.position.x,
-            this.position.y,
+            // Can offset the image being place on either axis
+            this.position.x + this.offset.x,
+            this.position.y + this.offset.y,
             crop.width,
             crop.height
         )
-        
+    }
+
+    update() {
         // Adding frame hold in animation
         this.frames.elapsed++
         if(this.frames.elapsed % this.frames.hold === 0) {
