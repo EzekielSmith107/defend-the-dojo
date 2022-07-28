@@ -13,7 +13,13 @@
 <body>
     <div id="canvasParent">
         <canvas></canvas>
-        <div id="gameOver">GAME OVER</div>
+        <div id="gameOver">
+            <div>Game Over</div>
+            <div>
+                <input type="text" placeholder="Initials" id="inputId" maxlength="3">
+                <button type="button" onclick="getInputValue()">Submit</button>
+            </div>
+        </div>
         <div id="resourceBackground"></div>
         <div id="resourceContainer">
             <div id="coinContainer">
@@ -28,6 +34,10 @@
                 </svg>
                 <div id="heartsRemaining">10</div>
             </div>
+
+            <div id="scoreContainer">
+                <div id="score">Score: 0</div>
+            </div>
         </div>
     </div>
     
@@ -38,6 +48,7 @@
     <script src="./js/classes/enemies.js"></script>
     <script src="./js/classes/placementTiles.js"></script>
     <script src="./js/classes/projectiles.js"></script>
+    <script src="../node_modules/axios/dist/axios.min.js"></script>
     <script src="./js/index.js"></script>
 </body>
 </html>

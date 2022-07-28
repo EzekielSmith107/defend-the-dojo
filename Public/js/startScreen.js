@@ -1,10 +1,11 @@
-const baseURL = 'http://localhost:5500/leaderboard'
+const baseURL = `http://localhost:5500/leaderboard`
 
 const getLeaderboard = () => {
     axios.get(baseURL)
     .then(res => {
         createTable(res.data)
     })
+    .catch(err => console.log(err))
 }
 
 let headers = ['Rank', 'Initials', 'Score']

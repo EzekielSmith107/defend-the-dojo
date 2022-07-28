@@ -47,5 +47,18 @@ module.exports = {
             res.status(200).send(dbRes[0])
         })
         .catch(err => console.log(err))
+    },
+
+    postLeaderboard: (req, res) => {
+        const { initials, score } = req.body
+        sequelize.query(`
+            INSERT INTO leaderboard (initials, score)
+            VALUES ('${initials.value}', ${score.value})
+        `)
+        .then(() => {
+            console.log('Leaderboard updated!')
+            res.sendStatus(200)
+        })
+        .catch(err => console.log(err))
     }
 }

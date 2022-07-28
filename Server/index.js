@@ -7,12 +7,12 @@ app.use(cors())
 
 const { SERVER_PORT } = process.env
 
-const { seed, getLeaderboard } = require('./controller.js')
+const { seed, getLeaderboard, postLeaderboard } = require('./controller.js')
 
 // Endpoints
 app.post('/seed', seed)
 
 app.get('/leaderboard', getLeaderboard)
-// app.post('/leaderboard', updateLeaderboard)
+app.post('/leaderboard', postLeaderboard)
 
 app.listen(SERVER_PORT, () => console.log(`Server is running on ${SERVER_PORT}`))

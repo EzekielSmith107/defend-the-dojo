@@ -58,6 +58,7 @@ let activeTile = undefined
 let enemyCount = 3
 let hearts = 10
 let coins = 100
+let score = 0
 const explosions = []
 spawnEnemies(enemyCount)
 
@@ -138,7 +139,9 @@ function animate() {
                     if(enemyIndex > -1) {
                         enemySpawn.splice(enemyIndex, 1)
                         coins += 25
+                        score += 10
                         document.querySelector('#coinsRemaining').innerHTML = coins
+                        document.querySelector('#score').innerHTML = `Score: ${score}`
                     }
                 }
                 // Creating explosion fx on projectile to enemy contact
@@ -174,6 +177,13 @@ canvas.addEventListener('click', () => {
     }
 })
 
+// Connecting "Game Over" to database
+function getInputValue() {
+    let inputVal = document.getElementById('inputId').value
+    console.log(inputVal)
+}
+
+// Tracking the user's mouse
 window.addEventListener('mousemove', (event) => {
     mouse.x = event.clientX
     mouse.y = event.clientY
