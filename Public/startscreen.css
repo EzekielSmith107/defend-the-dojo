@@ -1,0 +1,45 @@
+body {
+    background-image: url("../img/map.png");
+    background-size: cover;
+    font-family: 'Changa One', cursive;
+}
+
+.startScreen {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+}
+
+#loreBox {
+    width: 80%;
+    background-color: aliceblue;
+    height: 200px;
+    margin: auto;
+}
+
+#controlBox {
+    width: 50%;
+    background-color: aqua;
+    height: 300px;
+    margin: auto;
+}
+
+#leaderboardBox {
+    width: 50%;
+    background-color: chartreuse;
+    height: 300px;
+    margin: auto;
+}
+
+#startBox {
+    width: 50%;
+    background-color: lightpink;
+    height: 100px;
+    margin: auto;
+}
