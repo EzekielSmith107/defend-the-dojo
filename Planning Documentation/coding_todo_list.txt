@@ -19,14 +19,14 @@ Tower Defense Basics:
 Backend and Frontend Tie: 
 - basic setup <>
 - get and post setup with endpoints and controller file
-- front end request
+- front end request <>
 - front end start screen vv
 
 Start Screen w/ Controls:
-- set as landing page
-- create initial input with 3 char max (link to db)
-- create start button that takes you to game
-- setup text boxes and link db leaderboard
+- set as landing page <>
+- create initial input with 3 char max (link to db) => move to game over screen
+- create start button that takes you to game <>
+- setup text boxes and link db leaderboard <>
 - html has 5 semantic tags
 
 Launch: (if time permits)

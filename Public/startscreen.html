@@ -11,23 +11,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Changa+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="startScreen">
-        <div id="loreBox">Game Title and Lore
+    <article class="startScreen">
+        <main id="loreBox">
+            <h3>Defend the Dojo</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-        <div id="controlBox">Controls</div>
-        <div id="leaderboardBox">Leaderboard</div>
+        </main>
+        <section id="controlBox">
+            <h3>Controls</h3>
+        </section>
+        <aside id="leaderboardBox">
+            <h3>Leaderboard</h3>
+        </aside>
             <div id="startBox">
                 <nav>
-                    <button onclick="window.location.href='./index.html'">
+                    <button id="startButton" onclick="window.location.href='./index.html'">
                     Start Game
                     </button>
                 </nav>
             </div>
-    </div>
+    </article>
 
 
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../node_modules/axios/dist/axios.min.js"></script>
     <script src="./js/startScreen.js"></script>
 </body>
 </html>

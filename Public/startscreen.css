@@ -16,6 +16,23 @@ body {
     align-items: center;
 }
 
+.leaderboardTable {
+    border-collapse: collapse;
+    margin: auto;
+    font-size: 0.9em;
+    min-width: 400px;
+}
+
+.leaderboardTable thead tr {
+    text-align: left;
+    font-weight: bold;
+}
+
+.leaderboardTable th,
+.leaderboardTable td {
+    padding: 12px 15px;
+}
+
 #loreBox {
     width: 80%;
     background-color: aliceblue;
@@ -42,4 +59,8 @@ body {
     background-color: lightpink;
     height: 100px;
     margin: auto;
+}
+
+#startButton {
+    margin-top: 40px;
 }

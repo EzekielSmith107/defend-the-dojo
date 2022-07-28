@@ -34,5 +34,18 @@ module.exports = {
             console.log('DB seeded!')
             res.sendStatus(200)
         }).catch(err => console.log('error seeding DB', err))
+    },
+
+    getLeaderboard: (req, res) => {
+        sequelize.query(`
+            SELECT * 
+            FROM leaderboard
+            ORDER BY 2 ASC
+            LIMIT 5;
+        `)
+        .then((dbRes) => {
+            res.status(200).send(dbRes[0])
+        })
+        .catch(err => console.log(err))
     }
 }
