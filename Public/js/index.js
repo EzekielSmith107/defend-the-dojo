@@ -178,9 +178,23 @@ canvas.addEventListener('click', () => {
 })
 
 // Connecting "Game Over" to database
+const baseURL = `http://localhost:5500/leaderboard`
+
+function addToLeaderboard(body) {
+    axios.post(baseURL, body)
+        .then(() => {
+            console.log('leaderboard updated')
+            window.location.href = "./startscreen.html"
+        })
+}
+
 function getInputValue() {
     let inputVal = document.getElementById('inputId').value
-    console.log(inputVal)
+    let bodyObj = {
+        initials: inputVal,
+        score: score
+    }
+    addToLeaderboard(bodyObj)
 }
 
 // Tracking the user's mouse

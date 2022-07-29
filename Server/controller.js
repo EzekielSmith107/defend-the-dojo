@@ -40,7 +40,7 @@ module.exports = {
         sequelize.query(`
             SELECT * 
             FROM leaderboard
-            ORDER BY 2 ASC
+            ORDER BY score DESC
             LIMIT 5;
         `)
         .then((dbRes) => {
@@ -53,7 +53,7 @@ module.exports = {
         const { initials, score } = req.body
         sequelize.query(`
             INSERT INTO leaderboard (initials, score)
-            VALUES ('${initials.value}', ${score.value})
+            VALUES ('${initials}', ${score})
         `)
         .then(() => {
             console.log('Leaderboard updated!')
