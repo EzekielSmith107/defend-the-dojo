@@ -37,4 +37,12 @@ function createTable(arr) {
     })
 }
 
+// Audio
+let endAudio = document.getElementById('endAudio')
+
+function startGame() {
+    window.location.href = './index.html'
+    endAudio.play()
+}
+
 getLeaderboard()

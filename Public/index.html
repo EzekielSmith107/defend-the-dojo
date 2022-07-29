@@ -11,8 +11,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Changa+One&display=swap" rel="stylesheet">
 </head>
 <body>
+    <audio autoplay loop id="audio">
+        <source src="../audio/7 - Sad Theme.ogg" type="audio/ogg" id="endAudio">
+    </audio>
     <div id="canvasParent">
-        <canvas></canvas>
+        <canvas onmousemove="playAudio()"></canvas>
         <div id="gameOver">
             <div>Game Over</div>
             <div>
