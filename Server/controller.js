@@ -38,7 +38,7 @@ module.exports = {
 
     getLeaderboard: (req, res) => {
         sequelize.query(`
-            SELECT * 
+            SELECT initials, score 
             FROM leaderboard
             ORDER BY score DESC
             LIMIT 5;

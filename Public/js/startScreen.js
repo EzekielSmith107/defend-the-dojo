@@ -8,7 +8,7 @@ const getLeaderboard = () => {
     .catch(err => console.log(err))
 }
 
-let headers = ['Rank', 'Initials', 'Score']
+let headers = ['Initials', 'Score']
 let table = document.createElement('table')
 table.classList.add('leaderboardTable')
 let headerRow = document.createElement('tr')

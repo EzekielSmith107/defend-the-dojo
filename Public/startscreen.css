@@ -1,7 +1,7 @@
 body {
     background-image: url("../img/map.png");
     background-size: cover;
-    font-family: 'Changa One', cursive;
+    font-family: 'Changa', sans-serif;
 }
 
 .startScreen {
@@ -19,8 +19,7 @@ body {
 .leaderboardTable {
     border-collapse: collapse;
     margin: auto;
-    font-size: 0.9em;
-    min-width: 400px;
+    min-width: 350px;
 }
 
 .leaderboardTable thead tr {
@@ -30,37 +29,50 @@ body {
 
 .leaderboardTable th,
 .leaderboardTable td {
-    padding: 12px 15px;
+    padding: 3px 5px;
 }
 
 #loreBox {
     width: 80%;
-    background-color: aliceblue;
+    background-color: antiquewhite;
+    color: #4C3C3A;
     height: 200px;
     margin: auto;
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #controlBox {
-    width: 50%;
-    background-color: aqua;
+    width: 48%;
+    background-color: antiquewhite;
+    color: #4C3C3A;
     height: 300px;
     margin: auto;
+    border-radius: 15px;
 }
 
 #leaderboardBox {
-    width: 50%;
-    background-color: chartreuse;
+    width: 48%;
+    background-color: antiquewhite;
+    color: #4C3C3A;
     height: 300px;
     margin: auto;
+    border-radius: 15px;
 }
 
 #startBox {
     width: 50%;
-    background-color: lightpink;
     height: 100px;
     margin: auto;
 }
 
 #startButton {
-    margin-top: 40px;
+    margin-top: 20px;
+    background-color: antiquewhite;
+    color: #4C3C3A;
+    font-size: 24px;
+    border-radius: 15px;
+    height: 50px;
+    width: 250px;
 }
