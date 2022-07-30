@@ -11,9 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Changa&display=swap" rel="stylesheet">
 </head>
 <body>
-    <audio autoplay loop id="audio">
-        <source src="../audio/7 - Sad Theme.ogg" type="audio/ogg" id="endAudio">
-    </audio>
     <article class="startScreen">
         <main id="loreBox">
             <h3>Defend the Dojo</h3>
@@ -36,14 +33,12 @@
         </aside>
             <div id="startBox">
                 <nav>
-                    <button id="startButton" onclick="startGame()">
+                    <button id="startButton" onclick="window.location.href = './index.html'">
                     Start Game
                     </button>
                 </nav>
             </div>
     </article>
-
-
     <script src="../node_modules/axios/dist/axios.min.js"></script>
     <script src="./js/startScreen.js"></script>
 </body>
