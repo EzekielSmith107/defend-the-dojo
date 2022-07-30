@@ -3,6 +3,35 @@ body {
     font-family: 'Changa One', cursive;
 }
 
+.audioContainer {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(to right, #ff9966, #ff5e62);
+    height: 400px;
+    width: 400px;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #4C3C3A;
+}
+
+#quitButton {
+    margin-top: 20px;
+    background-color: antiquewhite;
+    color: #4C3C3A;
+    font-size: 24px;
+    border-radius: 15px;
+    height: 50px;
+    width: 150px;
+}
+
 #gameOver {
     display: none;
     position: absolute;

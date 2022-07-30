@@ -27,6 +27,12 @@ Start Screen w/ Controls:
 - create initial input with 3 char max (link to db) => move to game over screen
 - create start button that takes you to game <>
 - setup text boxes and link db leaderboard <>
-- html has 5 semantic tags
+- html has 5 semantic tags <>
+
+Polish:
+- Audio and quit options
+- Center Canvas
+- Add new enemy
+- Add ninja upgrade
 
 Launch: (if time permits)

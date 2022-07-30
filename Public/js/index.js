@@ -197,6 +197,19 @@ function getInputValue() {
     addToLeaderboard(bodyObj)
 }
 
+// Audio Controls
+let audioPanel = document.querySelector('.audioContainer')
+
+canvas.addEventListener('keypress', function(event) {
+    if(event.key === "Escape") {
+        if(audioPanel.style.display === none) {
+            audioPanel.style.display = flex
+        } else {
+            audioPanel.style.display = none
+        }
+    }
+})
+
 // Tracking the user's mouse
 window.addEventListener('mousemove', (event) => {
     mouse.x = event.clientX
