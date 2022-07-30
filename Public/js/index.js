@@ -198,15 +198,16 @@ function getInputValue() {
 }
 
 // Audio Controls
-let audioPanel = document.querySelector('.audioContainer')
+let audioPanel = document.querySelector('#audioContainer')
 
-canvas.addEventListener('keypress', function(event) {
-    if(event.key === "Escape") {
-        if(audioPanel.style.display === none) {
-            audioPanel.style.display = flex
+window.addEventListener('keydown', function(event) {
+    if(event.key === 'Escape') {
+        if(audioPanel.style.display === 'flex') {
+            audioPanel.style.display = 'none'
         } else {
-            audioPanel.style.display = none
+            audioPanel.style.display = 'flex'
         }
+
     }
 })
 

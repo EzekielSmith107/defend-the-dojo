@@ -3,7 +3,7 @@ body {
     font-family: 'Changa One', cursive;
 }
 
-.audioContainer {
+#audioContainer {
     display: none;
     position: absolute;
     flex-direction: column;
