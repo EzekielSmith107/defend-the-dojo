@@ -30,8 +30,8 @@ Start Screen w/ Controls:
 - html has 5 semantic tags <>
 
 Polish:
-- Audio and quit options
-- Center Canvas
+- Audio and quit options <>
+- Center Canvas <> performs better as is
 - Add new enemy
 - Add ninja upgrade
 

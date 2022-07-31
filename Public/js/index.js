@@ -148,7 +148,7 @@ function animate() {
                 explosions.push(new Sprite({ 
                     position: { x: projectile.enemy.center.x, y: projectile.enemy.center.y }, 
                     imageSrc: '../img/slash.png', 
-                    frames : { max: 4, hold: 10 } 
+                    frames : { max: 4, hold: 7 } 
                 }))
                 building.projectiles.splice(i, 1)
             }
