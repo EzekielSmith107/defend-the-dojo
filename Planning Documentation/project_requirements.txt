@@ -9,7 +9,7 @@ project includes a wireframe for each view <>
 
 project includes a list of MVP features * <>
 
-project includes a data model
+project includes a data model <>
 
 MVP
 app has at least 3 main features * <>
@@ -25,7 +25,7 @@ app has at least 5 semantic tags * <>
 
 app includes 1 view * <>
 
-app includes 1+ additional view(s)
+app includes 1+ additional view(s) <>
 
 styling includes flexbox <>
 

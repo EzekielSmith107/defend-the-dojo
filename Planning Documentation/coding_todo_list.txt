@@ -35,5 +35,6 @@ Polish:
 - Add new enemy <>
 - Add ninja upgrade <> skip for now
 - Pause 
+- Credits
 
 Launch: (if time permits)
