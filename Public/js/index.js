@@ -48,16 +48,20 @@ function spawnEnemies(spawnCount) {
         enemySpawn.push(
             new Enemy({
                 position: { x: waypoints[0].x - xOffset, y: waypoints[0].y }
-            })
-        )
+        }))
+        if(i < bossCount) {
+            enemySpawn.push(
+                new Boss({
+                    position: { x: waypoints[0].x - xOffset + 75, y: waypoints[0].y }
+                })
+            )
+        }
     }
-    for(let i = 0; i <= bossCount; i++) {
-        const xOffset = i * 150
-        enemySpawn.push(
-            new Boss({
-                position: { x: waypoints[0].x - xOffset, y: waypoints[0].y }
-            })
-        )
+    // Adjusting boss count for increased difficulty
+    if(bossCount === 1) {
+        bossCount++
+    } else {
+        bossCount += 2
     }
 }
 
@@ -120,7 +124,7 @@ function animate() {
 
     // tracking total amount of enemies
     if(enemySpawn.length === 0) {
-        enemyCount += 5
+        enemyCount += 2
         spawnEnemies(enemyCount)
     }
 

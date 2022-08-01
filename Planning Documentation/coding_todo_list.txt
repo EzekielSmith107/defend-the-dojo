@@ -32,7 +32,8 @@ Start Screen w/ Controls:
 Polish:
 - Audio and quit options <>
 - Center Canvas <> performs better as is
-- Add new enemy
-- Add ninja upgrade
+- Add new enemy <>
+- Add ninja upgrade <> skip for now
+- Pause 
 
 Launch: (if time permits)

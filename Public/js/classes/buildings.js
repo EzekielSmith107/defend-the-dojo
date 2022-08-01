@@ -1,4 +1,3 @@
-//? Add inheritance from placement tiles?
 class Building extends Sprite {
     constructor({ position = { x: 0, y: 0 } }) {
         super({
@@ -25,13 +24,6 @@ class Building extends Sprite {
 
     draw() {
         super.draw()
-
-        //! This circle radius is bugged on the last enemy when given a visual. Has no effect on gameplay.
-        //! After updating code, bug is on first enemy while a projectile is not in the air.
-        // context.beginPath
-        // context.arc(this.center.x, this.center.y, this.radius, 0, Math.PI * 2)
-        // context.fillStyle = 'rgba(0, 0, 255, 0.2)'
-        // context.fill()
     }
 
     update() {
