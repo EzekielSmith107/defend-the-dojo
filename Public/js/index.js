@@ -48,7 +48,16 @@ function spawnEnemies(spawnCount) {
         enemySpawn.push(
             new Enemy({
                 position: { x: waypoints[0].x - xOffset, y: waypoints[0].y }
-        }))
+            })
+        )
+    }
+    for(let i = 0; i <= bossCount; i++) {
+        const xOffset = i * 150
+        enemySpawn.push(
+            new Boss({
+                position: { x: waypoints[0].x - xOffset, y: waypoints[0].y }
+            })
+        )
     }
 }
 
@@ -56,18 +65,32 @@ const buildings = []
 
 let activeTile = undefined
 let enemyCount = 3
+let bossCount = 1
 let hearts = 10
 let coins = 100
 let score = 0
 const explosions = []
 spawnEnemies(enemyCount)
 
+// Audio Controls
+let audioPanel = document.querySelector('#audioContainer')
+
+window.addEventListener('keydown', function(event) {
+    if(event.key === 'Escape') {
+        if(audioPanel.style.display === 'flex') {
+         audioPanel.style.display = 'none'
+        } else {
+          audioPanel.style.display = 'flex'
+        }
+    }
+})
+
 // Creating our animation and linking everything together
 function animate() {
     const animationId = requestAnimationFrame(animate)
 
     context.drawImage(image, 0, 0)
-    
+
     for(let i = enemySpawn.length - 1; i >= 0; i--) {
         const enemy = enemySpawn[i]
         enemy.update()
@@ -196,20 +219,6 @@ function getInputValue() {
     }
     addToLeaderboard(bodyObj)
 }
-
-// Audio Controls
-let audioPanel = document.querySelector('#audioContainer')
-
-window.addEventListener('keydown', function(event) {
-    if(event.key === 'Escape') {
-        if(audioPanel.style.display === 'flex') {
-            audioPanel.style.display = 'none'
-        } else {
-            audioPanel.style.display = 'flex'
-        }
-
-    }
-})
 
 // Tracking the user's mouse
 window.addEventListener('mousemove', (event) => {
