@@ -37,7 +37,7 @@ const image = new Image()
 image.onload = () => {
     animate()
 }
-image.src = '../img/map.png'
+image.src = '/img/map.png'
 
 // Creating new enemies from our class
 const enemySpawn = []
@@ -79,12 +79,16 @@ spawnEnemies(enemyCount)
 // Audio Controls
 let audioPanel = document.querySelector('#audioContainer')
 
+let animation = null
+
 window.addEventListener('keydown', function(event) {
     if(event.key === 'Escape') {
         if(audioPanel.style.display === 'flex') {
          audioPanel.style.display = 'none'
+         requestAnimationFrame(animate)
         } else {
           audioPanel.style.display = 'flex'
+          cancelAnimationFrame(animation)
         }
     }
 })
@@ -92,6 +96,7 @@ window.addEventListener('keydown', function(event) {
 // Creating our animation and linking everything together
 function animate() {
     const animationId = requestAnimationFrame(animate)
+    animation = animationId
 
     context.drawImage(image, 0, 0)
 
@@ -174,7 +179,7 @@ function animate() {
                 // Creating explosion fx on projectile to enemy contact
                 explosions.push(new Sprite({ 
                     position: { x: projectile.enemy.center.x, y: projectile.enemy.center.y }, 
-                    imageSrc: '../img/slash.png', 
+                    imageSrc: './img/slash.png', 
                     frames : { max: 4, hold: 7 } 
                 }))
                 building.projectiles.splice(i, 1)
@@ -205,7 +210,7 @@ canvas.addEventListener('click', () => {
 })
 
 // Connecting "Game Over" to database
-const baseURL = `http://localhost:5500/leaderboard`
+const baseURL = `/leaderboard`
 
 function addToLeaderboard(body) {
     axios.post(baseURL, body)

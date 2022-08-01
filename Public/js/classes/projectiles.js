@@ -1,6 +1,6 @@
 class Projectile extends Sprite {
     constructor({ position = { x: 0, y: 0 }, enemy }) {
-        super({ position, imageSrc: '../img/Shuriken.png', frames: { max: 2, hold: 25 } })
+        super({ position, imageSrc: './img/Shuriken.png', frames: { max: 2, hold: 25 } })
         // property for a moving object
         this.velocity = {
             x: 0,

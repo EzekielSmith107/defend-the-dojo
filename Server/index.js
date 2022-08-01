@@ -1,12 +1,17 @@
 require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
+const path = require('path')
 
 const app = express()
 app.use(express.json())
 app.use(cors())
 
-const { SERVER_PORT } = process.env
+app.use('/', express.static(path.join(__dirname, '../Public')))
+app.use('/audio', express.static(path.join(__dirname, '../audio')))
+app.use('/img', express.static(path.join(__dirname, '../img')))
+
+const SERVER_PORT = process.env.PORT || 5500
 
 const { seed, getLeaderboard, postLeaderboard } = require('./controller.js')
 

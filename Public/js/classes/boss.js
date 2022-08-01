@@ -2,7 +2,7 @@ class Boss extends Sprite {
     constructor({ position = { x: 0, y: 0 } }) {
         super({ 
             position, 
-            imageSrc: '../img/boss.png', 
+            imageSrc: './img/boss.png', 
             frames: { max: 5, hold: 7 } 
         })
         this.width = 50

@@ -1,7 +1,7 @@
-const baseURL = `http://localhost:5500/leaderboard`
+const baseURL = `/leaderboard`
 
 const getLeaderboard = () => {
-    axios.get(baseURL)
+    axios.get(baseURL) // Can do /leaderboard
     .then(res => {
         createTable(res.data)
     })
