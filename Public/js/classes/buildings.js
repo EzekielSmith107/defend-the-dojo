@@ -17,7 +17,7 @@ class Building extends Sprite {
         }
         this.projectiles = []
         // Setting building radius to target enemies
-        this.radius = 115
+        this.radius = 125
         this.target
         this.elapsedSpawnTime = 0
     }
