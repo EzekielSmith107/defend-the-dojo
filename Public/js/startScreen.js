@@ -1,7 +1,7 @@
 const baseURL = `/leaderboard`
 
 const getLeaderboard = () => {
-    axios.get(baseURL) // Can do /leaderboard
+    axios.get(baseURL) 
     .then(res => {
         createTable(res.data)
     })
