@@ -216,7 +216,7 @@ function addToLeaderboard(body) {
     axios.post(baseURL, body)
         .then(() => {
             console.log('leaderboard updated')
-            window.location.href = "./startscreen.html"
+            window.location.href = "./index.html"
         })
 }
 
