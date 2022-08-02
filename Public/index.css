@@ -1,152 +1,87 @@
 body {
-    background-color: black;
-    font-family: 'Changa One', cursive;
+    background-image: url("/img/map.png");
+    background-size: cover;
+    font-family: 'Changa', sans-serif;
 }
 
-#audioContainer {
-    display: none;
+.startScreen {
     position: absolute;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    top: 0;
-    bottom: 0;
     left: 0;
     right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+}
+
+.leaderboardTable {
+    border-collapse: collapse;
+    margin: auto;
+    min-width: 350px;
+}
+
+.leaderboardTable thead tr {
+    text-align: left;
+    font-weight: bold;
+}
+
+.leaderboardTable th,
+.leaderboardTable td {
+    padding: 3px 5px;
+}
+
+#loreBox {
+    width: 80%;
     background-color: antiquewhite;
-    height: 400px;
-    width: 400px;
+    color: #4C3C3A;
+    height: 200px;
+    margin: auto;
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #4C3C3A;
+}
+
+#controlBox {
+    width: 48%;
+    background-color: antiquewhite;
+    color: #4C3C3A;
+    height: 300px;
+    margin: auto;
     border-radius: 15px;
     border-style: solid;
     border-width: 5px;
     border-color: #4C3C3A;
-    color: #4C3C3A;
 }
 
-#quitButton {
+#leaderboardBox {
+    width: 48%;
+    background-color: antiquewhite;
+    color: #4C3C3A;
+    height: 300px;
+    margin: auto;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #4C3C3A;
+}
+
+#startBox {
+    width: 50%;
+    height: 100px;
+    margin: auto;
+}
+
+#startButton {
     margin-top: 20px;
-    background-color: #4C3C3A;
-    color: antiquewhite;
+    background-color: antiquewhite;
+    color: #4C3C3A;
     font-size: 24px;
     border-radius: 15px;
     height: 50px;
-    width: 150px;
-}
-
-#gameOver {
-    display: none;
-    position: absolute;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    font-size: 72px;
-    color: white;
-    text-shadow:
-		-2px -2px 0 #000,
-		2px -2px 0 #000,
-		-2px 2px 0 #000,
-		2px 2px 0 #000;
-}
-
-#canvasParent {
-    display: inline-block;
-    position: relative;
-}
-
-#resourceBackground {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 400px;
-    height: 80px;
-    background: linear-gradient(to left bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
-}
-
-#resourceContainer {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    top: 4px;
-    right: 8px;
-}
-
-#coinContainer {
-    display: flex;
-    align-items: center;
-    margin-right: 10px;
-}
-
-#heartContainer {
-    display: flex;
-    align-items: center;
-    margin-right: 10px;
-}
-
-#scoreContainer {
-    display: flex;
-    align-items: center;
-}
-
-#heartPic {
-    width: 35px;
-    color: red;
-    margin-right: 5px;
-}
-
-#coinPic {
-    width: 25px;
-    color: gold;
-    margin-right: 5px;
-}
-
-#heartsRemaining {
-    font-size: 36px;
-    color: white;
-    text-shadow:
-		-2px -2px 0 #000,
-		2px -2px 0 #000,
-		-2px 2px 0 #000,
-		2px 2px 0 #000;
-}
-
-#coinsRemaining {
-    font-size: 36px;
-    color: white;
-    text-shadow:
-		-2px -2px 0 #000,
-		2px -2px 0 #000,
-		-2px 2px 0 #000,
-		2px 2px 0 #000;
-}
-
-#score {
-    font-size: 36px;
-    color: white;
-    text-shadow:
-		-2px -2px 0 #000,
-		2px -2px 0 #000,
-		-2px 2px 0 #000,
-		2px 2px 0 #000;
-}
-
-#inputId {
-    width: 60%;
-    padding: 7px;
-    box-sizing: border-box;
-    border-style: solid;
-    border-width: 5px;
-    border-color: #4C3C3A;
-}
-
-#submitId {
-    background-color: antiquewhite;
-    color: #4C3C3A;
-    font-size: 12px;
-    border-radius: 15px;
-    height: 25px;
-    width: 75px;
+    width: 250px;
 }
