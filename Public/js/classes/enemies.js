@@ -59,8 +59,6 @@ class Enemy extends Sprite {
         }
 
         // After an enemy reaches a waypoint, move onto the next one
-        //? Can Math.round be applied to both ends of the comparision and it still work?
-        //
         if(
             Math.abs(Math.round(this.center.x) - Math.round(waypoint.x)) < 
                 Math.abs(this.velocity.x) && 

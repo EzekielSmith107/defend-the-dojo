@@ -1,10 +1,9 @@
 require('dotenv').config()
 const Sequelize = require("sequelize")
 
-// Still needed if hosting
-const CONNECTION_STRING = process.env.DATABASE_URL || process.env.CONNECTION_STRING
+const DATABASE_URL = process.env.DATABASE_URL || 5500
 
-const sequelize = new Sequelize(CONNECTION_STRING, {
+const sequelize = new Sequelize(DATABASE_URL, {
     dialect: 'postgres',
     dialectOptions: {
         ssl: {

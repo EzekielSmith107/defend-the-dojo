@@ -11,7 +11,7 @@ app.use('/', express.static(path.join(__dirname, '../Public')))
 app.use('/audio', express.static(path.join(__dirname, '../audio')))
 app.use('/img', express.static(path.join(__dirname, '../img')))
 
-const SERVER_PORT = process.env.PORT || 5500
+const PORT = process.env.PORT || 5500
 
 const { seed, getLeaderboard, postLeaderboard } = require('./controller.js')
 
@@ -21,4 +21,4 @@ app.post('/seed', seed)
 app.get('/leaderboard', getLeaderboard)
 app.post('/leaderboard', postLeaderboard)
 
-app.listen(SERVER_PORT, () => console.log(`Server is running on ${SERVER_PORT}`))
+app.listen(PORT, () => console.log(`Server is running on ${PORT}`))
