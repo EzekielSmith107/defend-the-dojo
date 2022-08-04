@@ -3,6 +3,28 @@ body {
     font-family: 'Changa One', cursive;
 }
 
+span {
+    color: gold;
+}
+
+.credits-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    padding: 10px 10px;
+    font-size: 20px;
+    flex-direction: column;
+    line-height: 30px;
+    background-color: rgb(76, 60, 58);
+    border-radius: 15px;
+    text-shadow: 
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
 #audioContainer {
     display: none;
     position: absolute;
