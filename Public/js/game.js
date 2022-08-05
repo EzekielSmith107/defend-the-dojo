@@ -84,11 +84,9 @@ let animation = null
 
 window.addEventListener('keydown', function(event) {
     if(event.key === 'Escape') {
-        if(audioPanel.style.display === 'flex') {
+        if(audioPanel.style.display === 'flex' && gameOver.style.display !== 'flex') {
             audioPanel.style.display = 'none'
-            if(gameOver.style.display === 'none') {
-               requestAnimationFrame(animate) 
-            }
+            requestAnimationFrame(animate) 
         } else {
             audioPanel.style.display = 'flex'
             cancelAnimationFrame(animation)
