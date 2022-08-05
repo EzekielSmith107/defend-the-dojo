@@ -87,6 +87,8 @@ window.addEventListener('keydown', function(event) {
         if(audioPanel.style.display === 'flex' && gameOver.style.display !== 'flex') {
             audioPanel.style.display = 'none'
             requestAnimationFrame(animate) 
+        } else if(audioPanel.style.display === 'flex' && gameOver.style.display === 'flex') {
+            audioPanel.style.display = 'none'
         } else {
             audioPanel.style.display = 'flex'
             cancelAnimationFrame(animation)
