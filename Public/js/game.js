@@ -78,17 +78,20 @@ spawnEnemies(enemyCount)
 
 // Audio Controls
 let audioPanel = document.querySelector('#audioContainer')
+let gameOver = document.querySelector('#gameOver')
 
 let animation = null
 
 window.addEventListener('keydown', function(event) {
     if(event.key === 'Escape') {
         if(audioPanel.style.display === 'flex') {
-         audioPanel.style.display = 'none'
-         requestAnimationFrame(animate)
+            audioPanel.style.display = 'none'
+            if(gameOver.style.display === 'none') {
+               requestAnimationFrame(animate) 
+            }
         } else {
-          audioPanel.style.display = 'flex'
-          cancelAnimationFrame(animation)
+            audioPanel.style.display = 'flex'
+            cancelAnimationFrame(animation)
         }
     }
 })
@@ -112,7 +115,7 @@ function animate() {
             if(hearts === 0) {
                 // Pause the game when hearts reach 0. Works on a window object
                 cancelAnimationFrame(animationId)
-                document.querySelector('#gameOver').style.display = 'flex'
+                gameOver.style.display = 'flex'
             }
         }
     }
